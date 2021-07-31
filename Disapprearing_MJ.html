@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Disaprearing MJ</title>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){}
-</head>
-<body>
-<div class="wrapper">
-    <div class="header">
-        <img src = "./Images/MJ2" alt="MJ2">
-		<h1>Displaying our Blocks</h1>
-		<img src="./images/catandninja.png" class="white">
-    <div class="images">
+    <head>
+        <meta charset="utf-8">
+        <title>Disaprearing MJ</title>
+        <link rel="stylesheet" href="Disapprearing_MJ.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            var HTMLstring = "";
+            for(var i = 0; i < 8; i++){
+                HTMLstring += '<img src="./Images/MJ1.jpg" alt="MJ">'
+            }
+            HTMLstring += '<button>Restore</button>'
+            $(document).ready(function(){
+                $(".container").append(HTMLstring)
 
-	</div> 
+                $("img").click(function(){
+                    $(this).hide("slow");
+                })
 
+                $("button").click(function(){
+                    $("img").show();
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="container">
 
-    
-</body>
+        </div>
+    </body>
 </html>
